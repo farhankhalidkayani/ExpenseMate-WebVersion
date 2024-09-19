@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Expenses</title>
+    <link rel="stylesheet" href="/expenses.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>All Expenses</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example row, replace with dynamic data as needed -->
+          <% for(let expense of expenses){ %>
+          <tr>
+            <td><%= expense.id %></td>
+            <td>$<%= expense.amount %></td>
+            <td><%= expense.category %></td>
+            <td><%= expense.date %></td>
+            <td><%= expense.description %></td>
+            <td>
+              <a href="/expenses/<%= expense.id %>/edit" class="btn btn-edit"
+                >Edit</a
+              >
+            </td>
+            <td>
+              <form
+                action="/expenses/<%= expense.id %>?_method=DELETE"
+                method="post"
+                style="display: inline"
+              >
+                <button type="submit" class="btn btn-delete">Delete</button>
+              </form>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <a href="/expenses/new" class="btn btn-add">Add Expense</a>
+    </div>
+  </body>
+</html>
