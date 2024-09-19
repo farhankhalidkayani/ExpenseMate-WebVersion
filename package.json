@@ -1,0 +1,26 @@
+{
+  "name": "expensemate-webversion",
+  "version": "1.0.0",
+  "description": "CRUD application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farhankhalidkayani/ExpenseMate-WebVersion.git"
+  },
+  "author": "Farhan Khalid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/farhankhalidkayani/ExpenseMate-WebVersion/issues"
+  },
+  "homepage": "https://github.com/farhankhalidkayani/ExpenseMate-WebVersion#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.5"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
